@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="@string/mash"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintEnd_toStartOf="@+id/btn_rythm"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_titre"
         tools:text="MASH" />
@@ -25,9 +25,10 @@
         android:text="@string/rythm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_mash"
         app:layout_constraintTop_toBottomOf="@id/text_titre"
+        app:layout_constraintVertical_bias="0.501"
         tools:text="Rythm" />
 
     <TextView
