@@ -33,7 +33,7 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        //test
         TextView textView = (TextView) view.findViewById(R.id.text_view);
 
         CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
