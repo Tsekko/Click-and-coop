@@ -23,6 +23,7 @@ public class SecondFragment extends Fragment {
     private int count2 = 0;
     private CountViewModel model;
     private CountViewModel model2;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
