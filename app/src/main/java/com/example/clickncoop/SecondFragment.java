@@ -17,6 +17,7 @@ import com.example.clickncoop.R;
 
 import java.util.Locale;
 
+
 public class SecondFragment extends Fragment {
     private int count = 0;
     private int count2 = 0;
