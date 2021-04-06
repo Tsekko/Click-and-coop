@@ -57,10 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="430dp"
         android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/countText2"
@@ -68,20 +67,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="140dp"
         android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:rotation="-180"
+        android:textSize="50sp" />
+
     <TextView
         android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="140dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="300dp"
-        android:text="00:00"
-        android:textColor="@android:color/black"
-        android:textSize="60sp" />
+        android:layout_marginTop="330dp"
+        android:text=""
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="210dp"
+        android:rotation="-180"
+        android:text=""
+        android:textSize="50sp" />
 
 
 </RelativeLayout>

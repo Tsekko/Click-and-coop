@@ -2,6 +2,7 @@ package com.example.clickncoop;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.clickncoop.CountViewModel;
 import com.example.clickncoop.R;
 
 import java.util.Locale;
+import java.util.Timer;
 
 
 public class SecondFragment extends Fragment {
@@ -37,10 +39,13 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //test
         TextView textView = (TextView) view.findViewById(R.id.text_view);
+        TextView textView2 = (TextView) view.findViewById(R.id.text_view2) ;
 
-        CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+
+        CountDownTimer Timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
                 textView.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
+                textView2.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
             }
 
             public void onFinish() {
@@ -52,18 +57,22 @@ public class SecondFragment extends Fragment {
         view.findViewById(R.id.button_second).setOnClickListener(view1 -> NavHostFragment.findNavController(SecondFragment.this)
                 .navigate(R.id.action_SecondFragment_to_FirstFragment));
 
-        view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2());
+
         view.findViewById(R.id.button_joueur1).setOnClickListener(view1 -> plusCount());
 
         model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
         count = model.getCompte();
         modifyTextView(count);
 
+
+        view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2());
+
         model2 = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
         count2 = model2.getCompte();
         modifyTextView2(count2);
-    }
 
+
+    }
 
     private void plusCount(){
         count++;
@@ -86,4 +95,5 @@ public class SecondFragment extends Fragment {
         TextView t = getView().findViewById(R.id.countText2);
         t.setText(String.valueOf(count2));
     }
+
 }
