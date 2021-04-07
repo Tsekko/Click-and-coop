@@ -37,11 +37,11 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //test
+
         TextView textView = (TextView) view.findViewById(R.id.text_view);
         TextView textView2 = (TextView) view.findViewById(R.id.text_view2) ;
 
-
+        //création du compte à rebours
         CountDownTimer Timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
                 textView.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
@@ -52,38 +52,45 @@ public class SecondFragment extends Fragment {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
-        }.start();
-
-        view.findViewById(R.id.button_second).setOnClickListener(view1 -> NavHostFragment.findNavController(SecondFragment.this)
-                .navigate(R.id.action_SecondFragment_to_FirstFragment));
 
 
-        view.findViewById(R.id.button_joueur1).setOnClickListener(view1 -> plusCount());
+
+        };
+
+
+        view.findViewById(R.id.button_joueur1).setOnClickListener(view1 -> plusCount(Timer));
 
         model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
+        model.setCompte(0);
         count = model.getCompte();
         modifyTextView(count);
 
 
-        view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2());
+        view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2(Timer));
 
         model2 = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
+        model2.setCompte(0);
         count2 = model2.getCompte();
         modifyTextView2(count2);
 
-
     }
 
-    private void plusCount(){
+    private void plusCount(CountDownTimer Timer){
         count++;
         model.setCompte(count);
         modifyTextView(count);
+        if(count2 == 1) {
+            Timer.start();
+        }
     }
 
-    private void plusCount2(){
+    private void plusCount2(CountDownTimer Timer){
         count2++;
         model2.setCompte(count2);
         modifyTextView2(count2);
+        if(count == 1) {
+            Timer.start();
+        }
     }
 
     private void modifyTextView(int count){
