@@ -41,7 +41,7 @@ public class SecondFragment extends Fragment {
         TextView textView = (TextView) view.findViewById(R.id.text_view);
         TextView textView2 = (TextView) view.findViewById(R.id.text_view2) ;
 
-
+        //création du compte à rebours
         CountDownTimer Timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
                 textView.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
