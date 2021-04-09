@@ -4,25 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".RythmFragment">
 
     <Button
-        android:id="@+id/button_joueur1"
+        android:id="@+id/button1"
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="250dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="600dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_joueur2"
+        android:id="@+id/button2"
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="600dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="500dp"
         android:text="0"
         android:textSize="50sp" />
 
@@ -47,7 +69,8 @@
         android:layout_marginTop="140dp"
         android:text="0"
         android:rotation="-180"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        tools:ignore="DuplicateIds" />
 
     <TextView
         android:id="@+id/text_view"
@@ -55,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="350dp"
         android:text=""
         android:textSize="50sp" />
 
@@ -65,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="300dp"
         android:rotation="-180"
         android:text=""
         android:textSize="50sp" />

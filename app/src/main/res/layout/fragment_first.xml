@@ -31,6 +31,15 @@
         app:layout_constraintVertical_bias="0.501"
         tools:text="Rythm" />
 
+    <Button
+        android:id="@+id/button_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="third"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/text_titre"
         android:layout_width="wrap_content"

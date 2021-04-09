@@ -53,8 +53,11 @@ public class SecondFragment extends Fragment {
             }
 
 
+        };
+
 
         };
+
 
 
         view.findViewById(R.id.button_joueur1).setOnClickListener(view1 -> plusCount(Timer));
@@ -67,17 +70,21 @@ public class SecondFragment extends Fragment {
 
         view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2(Timer));
 
+
         model.setCompte2(0);
         count2 = model.getCompte2();
         modifyTextView2(count2);
 
     }
 
+
     //Incrémentation du compteur 1
+
     private void plusCount(CountDownTimer Timer){
         count++;
         model.setCompte(count);
         modifyTextView(count);
+
         if(count2 == 1 && count == 1) {
             Timer.start();
             timerStart = true;
@@ -89,10 +96,12 @@ public class SecondFragment extends Fragment {
     }
 
     //Implémentation du compteur 2
+
     private void plusCount2(CountDownTimer Timer){
         count2++;
         model.setCompte2(count2);
         modifyTextView2(count2);
+
         if(count == 1 && count2 == 1) {
             Timer.start();
             timerStart = true;
@@ -100,6 +109,7 @@ public class SecondFragment extends Fragment {
             count2 = 1;
             model.setCompte2(1);
             modifyTextView2(count2);
+
         }
     }
 
