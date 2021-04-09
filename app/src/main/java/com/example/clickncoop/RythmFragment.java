@@ -3,21 +3,15 @@ package com.example.clickncoop;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
-import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -38,6 +32,10 @@ public class RythmFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
+        model.setCompte(0);
+        count = model.getCompte();
+        modifyTextView(count);
         TextView textView = (TextView) view.findViewById(R.id.text_view);
         TextView textView2 = (TextView) view.findViewById(R.id.text_view2) ;
 
@@ -49,9 +47,13 @@ public class RythmFragment extends Fragment {
             }
 
             public void onFinish() {
+                Bundle bundle = new Bundle();
+                bundle.putInt("score", count);
+                bundle.putString("gameMode", "Rhythm");
+                if(NavHostFragment.findNavController(RythmFragment.this).getCurrentDestination().getId()==R.id.RythmFragment){
                 NavHostFragment.findNavController(RythmFragment.this)
-                        .navigate(R.id.action_rythmFragment_to_FirstFragment);
-            }
+                        .navigate(R.id.action_RythmFragment_to_ScoreFragment, bundle);
+            }}
 
         };
 
@@ -74,10 +76,7 @@ public class RythmFragment extends Fragment {
         view.findViewById(R.id.button4).setBackgroundColor(Color.BLUE);
 
 
-        model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
-        model.setCompte(0);
-        count = model.getCompte();
-        modifyTextView(count);
+
 
 
     }
