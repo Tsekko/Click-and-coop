@@ -55,11 +55,6 @@ public class SecondFragment extends Fragment {
 
         };
 
-
-        };
-
-
-
         view.findViewById(R.id.button_joueur1).setOnClickListener(view1 -> plusCount(Timer));
 
         model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
