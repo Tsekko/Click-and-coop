@@ -19,6 +19,7 @@ public class SecondFragment extends Fragment {
     private int count = 0;
     private int count2 = 0;
     private CountViewModel model;
+    private boolean timerStart = false;
 
     @Override
     public View onCreateView(
@@ -79,6 +80,11 @@ public class SecondFragment extends Fragment {
         modifyTextView(count);
         if(count2 == 1 && count == 1) {
             Timer.start();
+            timerStart = true;
+        } else if (!timerStart && count>=1){
+            count=1;
+            model.setCompte(1);
+            modifyTextView(count);
         }
     }
 
@@ -89,6 +95,11 @@ public class SecondFragment extends Fragment {
         modifyTextView2(count2);
         if(count == 1 && count2 == 1) {
             Timer.start();
+            timerStart = true;
+        } else if(!timerStart && count2>=1){
+            count2 = 1;
+            model.setCompte2(1);
+            modifyTextView2(count2);
         }
     }
 
