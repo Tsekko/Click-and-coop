@@ -44,11 +44,15 @@ public class SecondFragment extends Fragment {
             }
 
             public void onFinish() {
+                model.addition();
+                Bundle bundle = new Bundle();
+                bundle.putInt("score", model.getTotal());
+                bundle.putString("gameMode", "Mash");
                 //Vérification du fragment sur lequel on se trouve
                 if(NavHostFragment.findNavController(SecondFragment.this).getCurrentDestination().getId()==R.id.SecondFragment){
                     //Déplacement sur le fragment de score
                     NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ScoreFragment);
+                        .navigate(R.id.action_SecondFragment_to_ScoreFragment, bundle);
                 }
             }
 
@@ -71,7 +75,6 @@ public class SecondFragment extends Fragment {
         modifyTextView2(count2);
 
     }
-
 
     //Incrémentation du compteur 1
 

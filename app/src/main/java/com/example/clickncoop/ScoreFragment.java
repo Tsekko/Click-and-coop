@@ -27,9 +27,11 @@ public class ScoreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Récupération du score total du jeu Mash
-        model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
-        model.addition();
-        modifyCurrentScore(model.getTotal());
+        //model = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
+        //model.addition();
+        System.out.println(getArguments().getString("gameMode"));
+        System.out.println(getArguments().getInt("score"));
+        modifyCurrentScore(getArguments().getInt("score"));
 
         //Déplacement vers le Menu principal
         view.findViewById(R.id.menuButton).setOnClickListener(new View.OnClickListener() {
