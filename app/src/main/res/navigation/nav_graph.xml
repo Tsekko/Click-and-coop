@@ -37,7 +37,9 @@
             app:destination="@id/SecondFragment" />
         <action
             android:id="@+id/action_ScoreFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/FirstFragment"
+            app:popUpTo="@id/FirstFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/rythmFragment"
