@@ -2,7 +2,6 @@ package com.example.clickncoop;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.clickncoop.CountViewModel;
-import com.example.clickncoop.R;
-
 import java.util.Locale;
-import java.util.Timer;
 
 
 public class SecondFragment extends Fragment {
@@ -49,8 +44,10 @@ public class SecondFragment extends Fragment {
             }
 
             public void onFinish() {
+                if(NavHostFragment.findNavController(SecondFragment.this).getCurrentDestination().getId()==R.id.SecondFragment){
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_SecondFragment_to_ScoreFragment);
+                }
             }
 
 
