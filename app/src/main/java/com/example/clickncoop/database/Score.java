@@ -1,10 +1,10 @@
-package com.example.clickncoop;
-
-import java.util.UUID;
+package com.example.clickncoop.database;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.util.UUID;
 
 @Entity
 public class Score {

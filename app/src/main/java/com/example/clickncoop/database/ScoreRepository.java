@@ -1,4 +1,4 @@
-package com.example.clickncoop;
+package com.example.clickncoop.database;
 
 import android.app.Application;
 import android.os.AsyncTask;

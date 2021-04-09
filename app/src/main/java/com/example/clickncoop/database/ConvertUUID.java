@@ -1,14 +1,16 @@
-package com.example.clickncoop;
+package com.example.clickncoop.database;
+
+import androidx.room.TypeConverter;
 
 import java.util.UUID;
 
 public class ConvertUUID {
-    private UUID uid;
-    public ConvertUUID(UUID uid){
-        this.uid = uid;
-    }
-
-    public String conversionUUID(UUID uid){
-        return uid.toString();
+    @TypeConverter
+    public String fromUUID(UUID uid){
+        if(uid == null){
+            return null;
+        } else {
+            return uid.toString();
+        }
     }
 }
