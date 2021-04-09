@@ -16,7 +16,7 @@
             app:destination="@id/SecondFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_rythmFragment"
-            app:destination="@id/rythmFragment" />
+            app:destination="@id/RythmFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -53,12 +53,12 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/rythmFragment"
+        android:id="@+id/RythmFragment"
         android:name="com.example.clickncoop.RythmFragment"
         android:label="fragment_rythm"
         tools:layout="@layout/fragment_rythm" >
         <action
-            android:id="@+id/action_rythmFragment_to_ScoreFragment"
+            android:id="@+id/action_RythmFragment_to_ScoreFragment"
             app:destination="@id/ScoreFragment" >
             <argument
                 android:name="gameMode"
