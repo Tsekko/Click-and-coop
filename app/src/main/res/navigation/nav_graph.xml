@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_SecondFragment_to_ScoreFragment"
-            app:destination="@id/ScoreFragment" >
+            app:destination="@id/ScoreFragment">
             <argument
                 android:name="gameMode"
                 android:defaultValue="Rhythm" />
@@ -38,7 +38,8 @@
         tools:layout="@layout/fragment_score" >
         <action
             android:id="@+id/action_ScoreFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:popUpTo="@id/ScoreFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_ScoreFragment_to_FirstFragment"
             app:destination="@id/FirstFragment"
