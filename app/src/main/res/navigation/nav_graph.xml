@@ -23,9 +23,20 @@
         android:name="com.example.clickncoop.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_SecondFragment_to_ScoreFragment"
+            app:destination="@id/ScoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ScoreFragment"
+        android:name="com.example.clickncoop.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" >
+        <action
+            android:id="@+id/action_ScoreFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_ScoreFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
