@@ -9,17 +9,21 @@ import androidx.lifecycle.LiveData;
 
 public class ScoreRepository {
     private ScoreDAO mScoreDAO;
-    private LiveData<List<Score>> mAllScore;
+    private LiveData<List<Score>> mAllScoreMash;
+    private LiveData<List<Score>> mAllScoreRhythm;
 
     public ScoreRepository(Application application){
         ScoreDatabase db = ScoreDatabase.getDatabase(application);
         mScoreDAO = db.ScoreDAO();
-        mAllScore = mScoreDAO.getAll();
+        mAllScoreMash = mScoreDAO.getAllMash();
+        mAllScoreRhythm = mScoreDAO.getAllRhythm();
     }
 
-    public LiveData<List<Score>> getAllScore(){
-        return mAllScore;
+    public LiveData<List<Score>> getAllScoreMash(){
+        return mAllScoreMash;
     }
+
+    public LiveData<List<Score>> getAllScoreRhythm(){ return mAllScoreRhythm;}
 
     public void insert (Score score){
         new insertAsyncTask(mScoreDAO).execute(score);
