@@ -25,7 +25,11 @@
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_SecondFragment_to_ScoreFragment"
-            app:destination="@id/ScoreFragment" />
+            app:destination="@id/ScoreFragment" >
+            <argument
+                android:name="gameMode"
+                android:defaultValue="Rhythm" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/ScoreFragment"
@@ -40,6 +44,13 @@
             app:destination="@id/FirstFragment"
             app:popUpTo="@id/FirstFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="gameMode"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/rythmFragment"
@@ -47,7 +58,11 @@
         android:label="fragment_rythm"
         tools:layout="@layout/fragment_rythm" >
         <action
-            android:id="@+id/action_rythmFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_rythmFragment_to_ScoreFragment"
+            app:destination="@id/ScoreFragment" >
+            <argument
+                android:name="gameMode"
+                android:defaultValue="Rhythm" />
+        </action>
     </fragment>
 </navigation>
