@@ -19,7 +19,6 @@ public class SecondFragment extends Fragment {
     private int count = 0;
     private int count2 = 0;
     private CountViewModel model;
-    private CountViewModel model2;
 
     @Override
     public View onCreateView(
@@ -44,8 +43,10 @@ public class SecondFragment extends Fragment {
             }
 
             public void onFinish() {
+                //Vérification du fragment sur lequel on se trouve
                 if(NavHostFragment.findNavController(SecondFragment.this).getCurrentDestination().getId()==R.id.SecondFragment){
-                NavHostFragment.findNavController(SecondFragment.this)
+                    //Déplacement sur le fragment de score
+                    NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ScoreFragment);
                 }
             }
@@ -65,36 +66,39 @@ public class SecondFragment extends Fragment {
 
         view.findViewById(R.id.button_joueur2).setOnClickListener(view2 -> plusCount2(Timer));
 
-        model2 = new ViewModelProvider(requireActivity()).get(CountViewModel.class);
-        model2.setCompte(0);
-        count2 = model2.getCompte();
+        model.setCompte2(0);
+        count2 = model.getCompte2();
         modifyTextView2(count2);
 
     }
 
+    //Incrémentation du compteur 1
     private void plusCount(CountDownTimer Timer){
         count++;
         model.setCompte(count);
         modifyTextView(count);
-        if(count2 == 1) {
+        if(count2 == 1 && count == 1) {
             Timer.start();
         }
     }
 
+    //Implémentation du compteur 2
     private void plusCount2(CountDownTimer Timer){
         count2++;
-        model2.setCompte(count2);
+        model.setCompte2(count2);
         modifyTextView2(count2);
-        if(count == 1) {
+        if(count == 1 && count2 == 1) {
             Timer.start();
         }
     }
 
+    //Modification du TextView du compteur 1
     private void modifyTextView(int count){
         TextView t = getView().findViewById(R.id.countText);
         t.setText(String.valueOf(count));
     }
 
+    //Modification du TextView du compteur 2
     private void modifyTextView2(int count2){
         TextView t = getView().findViewById(R.id.countText2);
         t.setText(String.valueOf(count2));
